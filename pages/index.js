@@ -11,6 +11,14 @@ export default function Home() {
             <span className=" inline dark:text-white">¿Quieres ser</span>{' '}
             <span className=" text-transparent bg-clip-text bg-gradient-to-br from-red-600 to-pink-500 inline ">mi novia?</span>
         </h1>
+        <div className='mt-10'>
+
+            <button  className='px-10 py-2 mr-8 font-bold text-black transition duration-300 bg-greenM   rounded-full shadow-md sm:px-6 md:mr-6 '> Sí</button>            
+            <button  className="px-3 py-2 font-bold transition duration-300   rounded-full bg-redM sm:px-6 ">
+                {" "}
+                Sí en rojo
+            </button>
+        </div>
       
         {/* <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
         <div className="flex-shrink-0">
