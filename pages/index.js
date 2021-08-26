@@ -1,10 +1,30 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import { useState } from 'react';
+import Confetti from 'react-confetti'
+import useWindowSize from './hooks/use-window-size';
 
 export default function Home() {
+    const size = useWindowSize();
+    const [click, setClick] = useState(false)
+
+    const handleClick = async() => {
+        const delay = ms => new Promise(res => setTimeout(res, ms));
+
+        setClick(prev => !prev)
+        await delay(4000)
+        window.alert('¡Felicidades, acertaste!')
+    }
   return (
-    <div className={styles.container}>
+    <div className={' flex bg-black  overflow-hidden flex-col justify-center items-center h-screen'}>
+        {
+            click ?
+            <Confetti
+                width={size.width}
+                height={1000}
+                numberOfPieces={1000}
+            />
+            :
+            <></>
+        }
             <p className=' text-gray-300'>27/08/2021</p>
 
         <h1 className="text-4xl text-center font-normal tracking-tight text-white sm:text-5xl md:text-6xl">
@@ -13,8 +33,8 @@ export default function Home() {
         </h1>
         <div className='mt-10'>
 
-            <button  className='px-10 py-2 mr-8 font-bold text-black transition duration-300 bg-greenM   rounded-full shadow-md sm:px-6 md:mr-6 '> Sí</button>            
-            <button  className="px-3 py-2 font-bold transition duration-300   rounded-full bg-redM sm:px-6 ">
+            <button onClick={handleClick} className='px-10  lg:px-14 py-2 mr-8 font-bold text-black transition duration-300 bg-greenM   rounded-full shadow-md sm:px-6 md:mr-6 '> Sí</button>            
+            <button onClick={handleClick} className="px-3 py-2 font-bold transition duration-300   rounded-full bg-redM sm:px-6 ">
                 {" "}
                 Sí en rojo
             </button>
