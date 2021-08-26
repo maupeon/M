@@ -19,7 +19,7 @@ export default function Home() {
             click ?
             <Confetti
                 width={size.width}
-                height={1000}
+                height={size.height}
                 numberOfPieces={1000}
             />
             :
