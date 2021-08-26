@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Confetti from 'react-confetti'
-import useWindowSize from './hooks/use-window-size';
+import useWindowSize from '../hooks/use-window-size';
 
 export default function Home() {
     const size = useWindowSize();
