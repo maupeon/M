@@ -10,8 +10,10 @@ export default function Home() {
         const delay = ms => new Promise(res => setTimeout(res, ms));
 
         setClick(prev => !prev)
-        await delay(4000)
-        window.alert('¡Felicidades, acertaste!')
+        if(!click){
+            await delay(4000)
+            window.alert('¡Felicidades, acertaste!')
+        }
     }
   return (
     <div className={' flex bg-black  overflow-hidden flex-col justify-center items-center h-screen'}>
